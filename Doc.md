@@ -21,7 +21,13 @@ created:
 > ```
 
 ---
+# Accès au projet :
+Des VMs clients sont disponibles depuis les proxmox :
+- proxmox 002 à 172.16.127.63
+- proxmox 000 à 172.16.127.64
+Les vms sont installées avec interface graphiques, disponibles depuis l'onglet "Console" dans proxmox, avec identifiant + mot de passe sous le nom Clients dans la base de mots de passe.
 
+---
 # Rappel du sujet
 
 ## But
@@ -37,7 +43,7 @@ Mettre en place une infrastructure pour la société Dino shop, possédant deux 
 - Router
 - Support
 - DCHP
-- AD
+- LDAP
 - Nextcloud
 - Vlans
 
@@ -267,3 +273,15 @@ On ajoute ensuite le nouveau token, que j'appelle terraform
 Proxmox nous montre une seule fois le mot de passe pour le token, que je range dans la base de donnée Keepass
 On ajoute ensuite les permissions au token
 !\[\[Pasted image 20260414094937.png\]\]
+
+
+## 006-GLPI & 007-BDD
+
+Le GLPI est monté avec docker compose dans le réseau SRV accompagné de la base de donnée :
+- GLPI joignable à l'addresse 192.168.20.2
+- BDD joignable à l'addresse 192.168.20.1
+
+## 005-LDAP
+
+Le LDAP est un OpenLdap installé à l'addresse 192.168.20.3 controlé par PhpLdapAdmin
+Le dc est dinoshop et fr
