@@ -284,4 +284,18 @@ Le GLPI est monté avec docker compose dans le réseau SRV accompagné de la bas
 ## 005-LDAP
 
 Le LDAP est un OpenLdap installé à l'addresse 192.168.20.3 controlé par PhpLdapAdmin
-Le dc est dinoshop et fr
+Le dc est dinoshop et fr.
+Un fichier LDIF est disponible sur le client de paris, dans les Downloads du compte.
+Il est utilisé pour peuplé en partie le LDAP et pouvoir effectuer des tests.
+
+## 012-Nextcloud
+
+Nextcloud est installé à l'addresse 192.168.30.1, et connecté au ldap.
+
+## 011-Grafana
+
+Grafana est installé via un playbook ansible, disponible lui aussi dans le dossier Downloads, via le playbook monitoring2.yml
+
+## Notes sur l'ipsec et les routeurs :
+Il semblerait que malgré des configurations identiques, le routeur d'Honfleur ne fonctionne pas de la même manière que celui de Paris, ne permettant par exemple pas à des machines du réseau SRV d'accéder à internet malgré les règles de firewall prêtes pour.
+Le sujet s'est donc essentiellement porté à configurer le premier proxmox, site de Paris.
