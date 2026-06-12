@@ -295,6 +295,8 @@ Nextcloud est installé à l'addresse 192.168.30.1, et connecté au ldap.
 ## 011-Grafana
 
 Grafana est installé via un playbook ansible, disponible lui aussi dans le dossier Downloads, via le playbook monitoring2.yml
+Grafana est accessible depuis 192.168.30.2:3000
+Et est utilisé via les credentials par défaut admin admin
 
 ## Notes sur l'ipsec et les routeurs :
 Il semblerait que malgré des configurations identiques, le routeur d'Honfleur ne fonctionne pas de la même manière que celui de Paris, ne permettant par exemple pas à des machines du réseau SRV d'accéder à internet malgré les règles de firewall prêtes pour.
